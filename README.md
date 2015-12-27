@@ -37,8 +37,10 @@ Moreover, after creating this subset, I also removed the columns related to time
 removeIndex <- grep("timestamp|X|user_name|new_window", names(trainData))
 trainData <- trainData[, -removeIndex]
 
-As a result, I had a subset of HAR data set that had only ##### rows of of 54 variables.
+As a result, I had a subset of HAR data set that had only 9812 rows of of 54 variables.
 
+#> dim(trainData)
+#[1] 9812   54
 
 Then, based on the suggestion of the instructor (“… how you used cross validation”), I've used k-fold cross validation with K=4 
  After setting the trainControl, I have finally used the Random Forests (rf) algorithm in the following manner:
