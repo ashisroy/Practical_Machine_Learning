@@ -43,6 +43,7 @@ After setting the trainControl, I have finally used the Random Forests (rf) algo
 tc = trainControl(method = "cv", number = 4)
 
 library(randomForest)
+set.seed(1234)
 # Fit the model using Random Forests algorithm
 modFit <- train(trainData$classe ~.,
                 data = trainData,
@@ -180,10 +181,6 @@ pml_write_files = function(x){
 }
 
 pml_write_files(pred)
-
-The model performed predictions very accurately, it correctly predicted 20 cases out of 20.
-
-This leads to a  question that we have to test the model performance on a bigger sample. The test sample is too small.  
 
 
 
