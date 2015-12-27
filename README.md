@@ -1,13 +1,8 @@
 # Practical_Machine_Learning- Project write up
-In this project write-up, I have used the data from Human Activity Recognition (HAR). The aim was to train a model based on the data of 
-various sensor values, which could later be used to predict the Classe variable, that is the manner in which the participants of HAR 
-did the exercise.
+In this project write-up, I have used the data from Human Activity Recognition (HAR). The aim was to train a model based on the data of various sensor values, which could later be used to predict the Classe variable.
 
-After having examined the data briefly using the Rattle GUI, I have realized that some columns have a lot of missing (NA) values. 
-Instead of trying to model them, I have decided to remove them from the data set. So the first step, after having loaded the 
-required caret library (I've skipped the demonstration of Rattle GUI, since, after all, it was an interactive session with GUI part), 
-was to detect and eliminate columns with a lot of missing values:
-This resulted in 60 columns (variables), instead of 160.
+After loading the data in R environment and doing some basic univariate analysis, I have realized that some columns have a lot of missing (NA) values. 
+I have decided to remove those variables from the data set. This resulted in 60 columns (variables), instead of 160.
 
 After having removed the columns with missing values, I have proceeded to create a subset of the training data set because I have seen
 that the whole set contained 19622 rows (observations) from the HAR study. 
