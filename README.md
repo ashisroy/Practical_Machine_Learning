@@ -59,7 +59,46 @@ modFit <- train(trainData$classe ~.,
  I expected relatively good model performance, and a relatively low out of sample error rate:
  
  print(modFit)
-print(modFit$finalModel)
+ 
+ #Random Forest 
+
+#9812 samples
+ # 53 predictor
+  # 5 classes: 'A', 'B', 'C', 'D', 'E' 
+
+#No pre-processing
+#Resampling: Cross-Validated (4 fold) 
+
+#Summary of sample sizes: 7358, 7361, 7359, 7358 
+
+#Resampling results across tuning parameters:
+
+ # mtry  Accuracy   Kappa      Accuracy SD   Kappa SD    
+  # 2    0.9882803  0.9851720  0.0026245205  0.0033219497
+  #27    0.9928656  0.9909745  0.0007839521  0.0009924234
+  #53    0.9873627  0.9840122  0.0023983296  0.0030339991
+
+#Accuracy was used to select the optimal model using  the largest value.
+#The final value used for the model was mtry = 27. 
+ 
+ 
+ print(modFit$finalModel)
+
+#Call:
+ #randomForest(x = x, y = y, mtry = param$mtry, proximity = TRUE,      allowParallel = TRUE) 
+  #             Type of random forest: classification
+   #                  Number of trees: 500
+#No. of variables tried at each split: 27
+
+ #       OOB estimate of  error rate: 0.4%
+#Confusion matrix:
+ #    A    B    C    D    E class.error
+#A 2790    0    0    0    0 0.000000000
+#B    6 1889    4    0    0 0.005265929
+#C    0    8 1703    0    0 0.004675628
+#D    0    2   12 1594    0 0.008706468
+#E    0    1    0    6 1797 0.003880266
+
 
 
 
